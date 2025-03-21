@@ -119,22 +119,24 @@
             </div>
         </form>
         <div class="success-message" id="successMessage">
-            Your withdrawal form has been successfully submitted! you will receive payment in 48 hours. Thank you for choosing EMPIRE
+            Your withdrawal form has been process please wait for confirmation. Do not close your browser
         </div>
         <div class="error-message" id="errorMessage">
             There was an error submitting your form. Please try again.
         </div>
     </div>
     <script>
-    document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
-        // Comment out or remove the simulation code
-        // const isSuccess = true; // Change to false to simulate an error
-        // if (isSuccess) {
-        //     document.getElementById('successMessage').style.display = 'block';
-        //     document.getElementById('errorMessage').style.display = 'none';
-        // } else {
-        //     document.getElementById('successMessage').style.display = 'none';
-        //     document.getElementById('errorMessage').style.display = 'block';
-        // }
-    });
-</script>
+        document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
+            // Simulate form submission success or error
+            const isSuccess = true; // Change to false to simulate an error
+            if (isSuccess) {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('errorMessage').style.display = 'none';
+            } else {
+                document.getElementById('successMessage').style.display = 'none';
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
