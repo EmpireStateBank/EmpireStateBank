@@ -126,17 +126,15 @@
         </div>
     </div>
     <script>
-        document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
-            // Simulate form submission success or error
-            const isSuccess = true; // Change to false to simulate an error
-            if (isSuccess) {
-                document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('errorMessage').style.display = 'none';
-            } else {
-                document.getElementById('successMessage').style.display = 'none';
-                document.getElementById('errorMessage').style.display = 'block';
-            }
-        });
-    </script>
-</body>
-</html>
+    document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
+        // Comment out or remove the simulation code
+        // const isSuccess = true; // Change to false to simulate an error
+        // if (isSuccess) {
+        //     document.getElementById('successMessage').style.display = 'block';
+        //     document.getElementById('errorMessage').style.display = 'none';
+        // } else {
+        //     document.getElementById('successMessage').style.display = 'none';
+        //     document.getElementById('errorMessage').style.display = 'block';
+        // }
+    });
+</script>
