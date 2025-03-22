@@ -108,21 +108,26 @@
     </div>
 
     <script>
-        document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Submit the form using FormSubmit
-        fetch(this.action, {
-            method: this.method,
-            body: new FormData(this)
-        }).then(response => {
-            if (response.ok) {
-                document.getElementById('successMessage').style.display = 'block';
-            } else {
-                alert('There was an issue with your submission.');
-            }
-        }).catch(error => {
-            console.error('Error:', error);
-            alert('There was an issue with your submission.');
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Submit the form using FormSubmit
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this)
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('errorMessage').style.display = 'none';
+                } else {
+                    document.getElementById('errorMessage').style.display = 'block';
+                    document.getElementById('successMessage').style.display = 'none';
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+            });
         });
-    });
-</script>
+    </script>
+</body>
+</html>
