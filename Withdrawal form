@@ -108,7 +108,7 @@
     </div>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
         event.preventDefault();
         // Submit the form using FormSubmit
         fetch(this.action, {
