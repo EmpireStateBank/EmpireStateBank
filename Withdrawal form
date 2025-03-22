@@ -62,7 +62,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h2>Withdrawal Request Form</h2>
+        <h2>Withdrawal Form</h2>
         <form action="mailto:empirevirtual99@gmail.com" method="post" enctype="text/plain">
             <div class="form-group">
                 <label for="bank">Select Bank:</label>
