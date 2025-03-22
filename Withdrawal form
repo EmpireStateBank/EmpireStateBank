@@ -108,15 +108,21 @@
     </div>
 
     <script>
-        document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Simulate a form submission
-            setTimeout(function() {
-                document.getElementById('withdrawalForm').style.display = 'none';
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Submit the form using FormSubmit
+        fetch(this.action, {
+            method: this.method,
+            body: new FormData(this)
+        }).then(response => {
+            if (response.ok) {
                 document.getElementById('successMessage').style.display = 'block';
-            }, 1000);
+            } else {
+                alert('There was an issue with your submission.');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert('There was an issue with your submission.');
         });
-    </script>
-</body>
-</html>
+    });
+</script>
