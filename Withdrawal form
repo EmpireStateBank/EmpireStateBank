@@ -7,118 +7,104 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
         }
-        .form-container {
-            background-color: #fff;
+        .container {
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-        .form-container h2 {
-            margin-bottom: 20px;
-            text-align: center;
-            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .form-group {
             margin-bottom: 15px;
         }
-        .form-group label {
+        label {
             display: block;
             margin-bottom: 5px;
-            color: #333;
         }
-        .form-group input, .form-group select, .form-group textarea {
+        input[type="text"], input[type="email"], input[type="number"], input[type="tel"], select {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 4px;
         }
-        .form-group textarea {
-            resize: none;
-            height: 80px;
-        }
-        .form-group button {
-            width: 100%;
-            padding: 10px;
+        button[type="submit"] {
             background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
             border: none;
             border-radius: 4px;
-            color: #fff;
-            font-size: 16px;
             cursor: pointer;
         }
-        .form-group button:hover {
+        button[type="submit"]:hover {
             background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
+    <div class="container">
         <h2>Withdrawal Form</h2>
         <form action="mailto:empirevirtual99@gmail.com" method="post" enctype="text/plain">
             <div class="form-group">
-                <label for="bank">Select Bank:</label>
-                <select id="bank" name="bank" required>
-                    <option value="access_bank">Access Bank</option>
-                    <option value="citibank">Citibank</option>
-                    <option value="diamond_bank">Diamond Bank</option>
-                    <option value="ecobank">Ecobank</option>
-                    <option value="fidelity_bank">Fidelity Bank</option>
-                    <option value="fcmb">First City Monument Bank (FCMB)</option>
-                    <option value="first_bank">First Bank of Nigeria</option>
-                    <option value="gtbank">Guaranty Trust Bank</option>
-                    <option value="heritage_bank">Heritage Bank</option>
-                    <option value="keystone_bank">Keystone Bank</option>
-                    <option value="palmpay">PalmPay</option>
-                    <option value="polaris_bank">Polaris Bank</option>
-                    <option value="providus_bank">Providus Bank</option>
-                    <option value="stanbic_ibtc">Stanbic IBTC Bank</option>
-                    <option value="standard_chartered">Standard Chartered Bank</option>
-                    <option value="sterling_bank">Sterling Bank</option>
-                    <option value="suntrust_bank">Suntrust Bank</option>
-                    <option value="union_bank">Union Bank</option>
-                    <option value="uba">United Bank for Africa (UBA)</option>
-                    <option value="unity_bank">Unity Bank</option>
-                    <option value="wema_bank">Wema Bank</option>
-                    <option value="zenith_bank">Zenith Bank</option>
-                    <option value="opay">OPay</option>
-                </select>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="account_name">Account Name:</label>
-                <input type="text" id="account_name" name="account_name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="account_number">Account Number:</label>
-                <input type="text" id="account_number" name="account_number" required>
-            </div>
-            <div class="form-group">
-                <label for="beneficiary_name">Beneficiary Name:</label>
-                <input type="text" id="beneficiary_name" name="beneficiary_name" required>
-            </div>
-            <div class="form-group">
-                <label for="beneficiary_mobile">Beneficiary Mobile Number:</label>
-                <input type="text" id="beneficiary_mobile" name="beneficiary_mobile" required>
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount:</label>
+                <label for="amount">Withdrawal Amount</label>
                 <input type="number" id="amount" name="amount" required>
             </div>
             <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description">I hereby request for payment.</textarea>
+                <label for="account-name">Account Name</label>
+                <input type="text" id="account-name" name="account-name" required>
             </div>
             <div class="form-group">
-                <button type="submit">Submit</button>
+                <label for="account">Account Number</label>
+                <input type="text" id="account" name="account" required>
             </div>
+            <div class="form-group">
+                <label for="bank">Bank</label>
+                <select id="bank" name="bank" required>
+                    <option value="">Select Bank</option>
+                    <option value="access-bank">Access Bank</option>
+                    <option value="citibank">Citibank</option>
+                    <option value="diamond-bank">Diamond Bank</option>
+                    <option value="ecobank">Ecobank</option>
+                    <option value="fidelity-bank">Fidelity Bank</option>
+                    <option value="first-bank">First Bank</option>
+                    <option value="fcmb">First City Monument Bank (FCMB)</option>
+                    <option value="globus-bank">Globus Bank</option>
+                    <option value="gtbank">Guaranty Trust Bank (GTBank)</option>
+                    <option value="heritage-bank">Heritage Bank</option>
+                    <option value="jaiz-bank">Jaiz Bank</option>
+                    <option value="keystone-bank">Keystone Bank</option>
+                    <option value="opay-bank">Opay Bank</option>
+                    <option value="palmpay-bank">Palmpay Bank</option>
+                    <option value="polaris-bank">Polaris Bank</option>
+                    <option value="providus-bank">Providus Bank</option>
+                    <option value="stanbic-ibtc">Stanbic IBTC Bank</option>
+                    <option value="standard-chartered">Standard Chartered Bank</option>
+                    <option value="sterling-bank">Sterling Bank</option>
+                    <option value="suntrust-bank">Suntrust Bank</option>
+                    <option value="union-bank">Union Bank</option>
+                    <option value="uba">United Bank for Africa (UBA)</option>
+                    <option value="unity-bank">Unity Bank</option>
+                    <option value="wema-bank">Wema Bank</option>
+                    <option value="zenith-bank">Zenith Bank</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Beneficiary's Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            <button type="submit">Submit</button>
         </form>
     </div>
 </body>
