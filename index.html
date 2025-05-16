@@ -78,6 +78,32 @@
         article p {
             line-height: 1.7;
         }
+        .frozen-account-label {
+            display: flex;
+            align-items: center;
+            background: #ffe4e1;
+            color: #c0392b;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .frozen-account-label strong {
+            margin: 0 0.4rem;
+        }
+        .unfreeze-link {
+            margin-left: 1rem;
+            color: #1e90ff;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .frozen-accounts-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 2rem;
+        }
         footer {
             text-align: center;
             padding: 1.5rem 0;
@@ -97,6 +123,9 @@
                 flex-direction: column;
                 align-items: flex-end;
                 padding: 0.5rem 1rem;
+            }
+            .frozen-accounts-group {
+                gap: 0.5rem;
             }
         }
     </style>
@@ -119,11 +148,22 @@
         <p>Insights about EmpireStateBank</p>
     </header>
     <div class="container">
+        <!-- NEW: Multiple Frozen Account Labels -->
+        <div class="frozen-accounts-group">
+            <div class="frozen-account-label">
+                <span>🔒 <label>Frozen Account:</label> <strong>John Doe</strong></span>
+                <a class="unfreeze-link" href="https://paystack.com/pay/kk4elf4drw" target="_blank" rel="noopener">Unfreeze Account</a>
+            </div>
+            <div class="frozen-account-label">
+                <span>🔒 <label>Frozen Account:</label> <strong>Mary Smith</strong></span>
+                <a class="unfreeze-link" href="https://paystack.com/pay/kk4elf4drw" target="_blank" rel="noopener">Unfreeze Account</a>
+            </div>
+        </div>
         <article>
             <h2>About EmpireStateBank</h2>
             <div class="meta">Posted on May 16, 2025</div>
             <p>
-                EmpireStateBank is committed to providing secure, reliable, and innovative financial services for everyone. As a leader in digital and traditional banking, we focus on customer satisfaction, advanced technology, and community engagement. Whether you're opening your first savings account, managing your business finances, or exploring investment opportunities, EmpireStateBank is here to help you every step of the way.
+                At EmpireStateBank, we believe in making financial solutions accessible and exciting for everyone. That's why we're introducing a special offer for sports lovers who are new to betting! Every day, we give out free tokens worth 500 naira to help beginners enjoy the thrill of sports betting without any risk. If you love sports but don't know how to bet, our daily token giveaway is your perfect starting point to learn, play, and have fun—risk free!
             </p>
         </article>
         <article>
