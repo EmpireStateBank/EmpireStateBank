@@ -8,15 +8,74 @@
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            background: #f4f6fa;
-            color: #222;
+            background: #101018; /* Black/dark background */
+            color: #f3f6fc;
+            min-height: 100vh;
+            background-image: linear-gradient(120deg, #101018 70%, #2c2b4d 100%);
+        }
+        .auth-container {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: rgba(36, 36, 60, 0.95);
+            box-shadow: 0 4px 24px rgba(20, 20, 40, 0.25);
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 220px;
+        }
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        .auth-buttons button {
+            background: linear-gradient(90deg, #6f4aff 30%, #00eaff 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.55rem 1.3rem;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            box-shadow: 0 2px 8px rgba(0, 234, 255, 0.08);
+        }
+        .auth-buttons button:hover {
+            background: linear-gradient(90deg, #00eaff 10%, #6f4aff 90%);
+            transform: translateY(-2px) scale(1.05);
+        }
+        #userGreeting {
+            color: #fff;
+            font-size: 1.08rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        #userGreeting button {
+            background: #ff4c60;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.35rem 1.1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 0.8rem;
+            transition: background 0.2s;
+        }
+        #userGreeting button:hover {
+            background: #d7263d;
         }
         header {
-            background: #0a174e;
+            background: linear-gradient(90deg, #1a1b2f 70%, #2e1f50 100%);
             color: #fff;
             padding: 2rem 0 1.5rem 0;
             text-align: center;
             position: relative;
+            box-shadow: 0 6px 24px rgba(111,74,255,0.13);
         }
         .header-image {
             width: 100%;
@@ -24,56 +83,49 @@
             object-fit: cover;
             display: block;
             margin-bottom: 1rem;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 2px 16px rgba(0,234,255,0.12);
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.7rem;
+            background: linear-gradient(90deg, #00eaff, #6f4aff, #ff4c60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         header p {
             margin: 0.5rem 0 0 0;
-            font-size: 1.2rem;
-            color: #a8b6d6;
-        }
-        .auth-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 0.5rem 2rem 0.5rem 2rem;
-            background: #16224d;
-        }
-        .auth-buttons button {
-            margin-left: 1rem;
-            background: #1e90ff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 0.5rem 1.2rem;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .auth-buttons button:hover {
-            background: #0a69c6;
+            font-size: 1.15rem;
+            color: #b4d7fc;
+            text-shadow: 0 2px 12px rgba(0,234,255,0.07);
         }
         .container {
             max-width: 800px;
-            margin: 2rem auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 16px rgba(10, 23, 78, 0.07);
-            padding: 2rem;
+            margin: 3.7rem auto 2rem auto;
+            background: rgba(36, 36, 60, 0.98);
+            border-radius: 14px;
+            box-shadow: 0 8px 32px rgba(111,74,255,0.09);
+            padding: 2.2rem 2rem 2rem 2rem;
         }
         article {
             margin-bottom: 2.5rem;
+            background: rgba(16, 24, 32, 0.65);
+            border-left: 5px solid #00eaff;
+            border-radius: 8px;
+            padding: 1.3rem;
+            box-shadow: 0 2px 12px rgba(0,234,255,0.05);
         }
         article h2 {
-            color: #0a174e;
+            color: #6f4aff;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.01em;
         }
         article .meta {
-            color: #7a869a;
+            color: #a8b6d6;
             font-size: 0.9rem;
             margin-bottom: 1.2rem;
-            display: none; /* Hide meta completely */
+            display: none;
         }
         article p {
             line-height: 1.7;
@@ -81,48 +133,70 @@
         .frozen-account-label {
             display: flex;
             align-items: center;
-            background: #ffe4e1;
-            color: #c0392b;
+            background: linear-gradient(90deg, #232a34 80%, #ff4c60 120%);
+            color: #ffb3bc;
             padding: 1rem;
-            border-radius: 6px;
-            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.1rem;
             font-size: 1.1rem;
+            border-left: 4px solid #ff4c60;
+            box-shadow: 0 2px 8px rgba(255,76,96,0.09);
         }
         .frozen-account-label strong {
             margin: 0 0.4rem;
+            color: #ff4c60;
         }
         .unfreeze-link {
             margin-left: 1rem;
-            color: #1e90ff;
+            color: #00eaff;
             text-decoration: underline;
             cursor: pointer;
             font-weight: 500;
+            transition: color 0.2s;
+        }
+        .unfreeze-link:hover {
+            color: #6f4aff;
         }
         .frozen-accounts-group {
             display: flex;
             flex-direction: column;
-            gap: 0.7rem;
+            gap: 0.5rem;
             margin-bottom: 2rem;
         }
         footer {
             text-align: center;
             padding: 1.5rem 0;
-            background: #0a174e;
+            background: linear-gradient(90deg, #1a1b2f 60%, #6f4aff 100%);
             color: #fff;
             font-size: 1rem;
             margin-top: 2rem;
+            border-radius: 0 0 14px 14px;
+        }
+        /* Responsive Improvements */
+        @media (max-width: 900px) {
+            .container {
+                margin: 4.5rem 1rem 2rem 1rem;
+            }
+            .auth-container {
+                right: 1rem;
+                top: 1rem;
+                padding: 0.5rem 1rem;
+            }
         }
         @media (max-width: 600px) {
             .container {
                 padding: 1rem;
             }
-            header h1 {
-                font-size: 1.6rem;
-            }
             .auth-container {
-                flex-direction: column;
-                align-items: flex-end;
-                padding: 0.5rem 1rem;
+                position: static;
+                margin: 1rem auto;
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                border-radius: 18px;
+            }
+            header h1 {
+                font-size: 2rem;
             }
             .frozen-accounts-group {
                 gap: 0.5rem;
@@ -136,19 +210,17 @@
             <button onclick="redirectToLink('login')">Login</button>
             <button onclick="redirectToLink('signup')">Sign Up</button>
         </div>
-        <div id="userGreeting" style="display:none; color:#fff; font-size:1.1rem;">
+        <div id="userGreeting" style="display:none;">
             Welcome, <span id="usernameDisplay"></span>!
-            <button style="margin-left:1rem;" onclick="logout()">Logout</button>
+            <button onclick="logout()">Logout</button>
         </div>
     </div>
     <header>
-        <!-- Replace src with your bank logo or header image -->
         <img src="-5798482690763244805_120.jpg" class="header-image" id="bankHeaderImg" alt="EmpireStateBank Header Image">
         <h1>EmpireStateBank</h1>
-        <p>All customers should share their Image to EmpireStateBank email address on before the withdrawal date: empirevirtual99@gmail.com</p>
+        <p>All customers should share their Image to EmpireStateBank email address: empirevirtual99@gmail.com</p>
     </header>
     <div class="container">
-        <!-- NEW: Multiple Frozen Account Labels -->
         <div class="frozen-accounts-group">
             <div class="frozen-account-label">
                 <span>🔒 <label>Frozen Account:</label> <strong>DANIEL UMANA</strong></span>
@@ -167,14 +239,27 @@
             <h2>About EmpireStateBank</h2>
             <div class="meta">Posted on May 16, 2025</div>
             <p>
-                At EmpireStateBank, we believe in making financial solutions accessible and exciting for everyone. That's why we're introducing a special offer for sports lovers who are new to betting! Every day, we give out free tokens worth 500 naira to help beginners enjoy the thrill of sports betting without any risk. If you love sports but don't know how to bet, our daily token giveaway is your perfect starting point to learn, play, and have fun—risk free!
+                EmpireStateBank is committed to providing accessible and rewarding financial solutions for everyone. Our unique daily token program allows you to earn rewards of ₦500 daily for 30 days, making it easy to grow your earnings consistently. Simply activate your daily token and you’ll receive ₦500 each day for a full month—no hidden charges or complicated processes.<br><br>
+                <strong>How it Works:</strong><br>
+                - Activate your daily token with EmpireStateBank.<br>
+                - Earn ₦500 each day for 30 days—totaling ₦15,000 at the end of the period.<br>
+                - Monitor your earnings and transactions easily from your EmpireStateBank account.<br><br>
+                <strong>Our Terms:</strong><br>
+                Participation in the daily token program is subject to EmpireStateBank’s terms and conditions. Each user is entitled to one active daily token per cycle. Tokens are non-transferable and must be renewed after the 30-day period to continue earning. EmpireStateBank reserves the right to update the terms of this program at any time.
             </p>
         </article>
         <article>
             <h2>Withdrawal</h2>
             <div class="meta">Posted on May 16, 2025</div>
             <p>
-                You can withdraw to any bank account of your choice. Regenerate your token to keep on earning.
+                Withdrawals at EmpireStateBank are simple and flexible—transfer your earnings to any bank account of your choice at any time after your token cycle ends.<br><br>
+                <strong>To continue earning after withdrawal:</strong><br>
+                You must <span style="color:#00eaff;font-weight:600;">regenerate your token</span> to activate a new 30-day cycle and keep earning rewards. Remember, tokens must be regenerated after every full cycle to maintain uninterrupted earnings.<br><br>
+                <strong>Our Terms:</strong><br>
+                - Withdrawals are processed promptly to your nominated bank account.<br>
+                - Regenerating your token is required to participate in the next earning cycle.<br>
+                - Please ensure your account details are correct to avoid delays.<br>
+                - EmpireStateBank reserves the right to verify all transactions and may request additional documentation if necessary.
             </p>
         </article>
     </div>
@@ -185,15 +270,11 @@
         // Redirects for Login and Sign Up buttons
         function redirectToLink(type) {
             if(type === 'login') {
-                // Change this link to your actual login URL
                 window.location.href = "https://sambo7785.github.io/Account-Status";
             } else if(type === 'signup') {
-                // Change this link to your actual sign up URL
                 window.location.href = "https://paystack.com/pay/jrwbdzxhyz";
             }
         }
-
-        // Simple stub for logout (if you want to keep the greeting UI)
         function logout() {
             localStorage.removeItem('loggedInUser');
             updateAuthUI();
