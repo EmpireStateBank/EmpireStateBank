@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>EmpireStateBank Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Force desktop view by setting a fixed width -->
+    <meta name="viewport" content="width=1024">
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            background: #101018; /* Black/dark background */
-            color: #f3f6fc;
+            background: #000; /* Pure black background */
+            color: #e3e6eb;
             min-height: 100vh;
-            background-image: linear-gradient(120deg, #101018 70%, #2c2b4d 100%);
+            background-image: linear-gradient(135deg, #000 60%, #16181e 100%);
         }
         .auth-container {
             position: fixed;
             top: 2rem;
             right: 2rem;
             z-index: 100;
-            background: rgba(36, 36, 60, 0.95);
+            background: rgba(24, 24, 32, 0.98);
             box-shadow: 0 4px 24px rgba(20, 20, 40, 0.25);
-            border-radius: 2rem;
+            border-radius: 1.8rem;
             padding: 0.7rem 1.5rem;
             display: flex;
             align-items: center;
@@ -32,7 +33,7 @@
             gap: 1rem;
         }
         .auth-buttons button {
-            background: linear-gradient(90deg, #6f4aff 30%, #00eaff 100%);
+            background: linear-gradient(90deg, #3b82f6 30%, #ef4444 100%);
             color: #fff;
             border: none;
             border-radius: 50px;
@@ -42,10 +43,10 @@
             letter-spacing: 0.03em;
             cursor: pointer;
             transition: background 0.2s, transform 0.15s;
-            box-shadow: 0 2px 8px rgba(0, 234, 255, 0.08);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
         }
         .auth-buttons button:hover {
-            background: linear-gradient(90deg, #00eaff 10%, #6f4aff 90%);
+            background: linear-gradient(90deg, #ef4444 10%, #3b82f6 90%);
             transform: translateY(-2px) scale(1.05);
         }
         #userGreeting {
@@ -56,7 +57,7 @@
             gap: 0.7rem;
         }
         #userGreeting button {
-            background: #ff4c60;
+            background: #ef4444;
             color: #fff;
             border: none;
             border-radius: 50px;
@@ -67,15 +68,15 @@
             transition: background 0.2s;
         }
         #userGreeting button:hover {
-            background: #d7263d;
+            background: #991b1b;
         }
         header {
-            background: linear-gradient(90deg, #1a1b2f 70%, #2e1f50 100%);
+            background: linear-gradient(90deg, #18181b 70%, #22223b 100%);
             color: #fff;
             padding: 2rem 0 1.5rem 0;
             text-align: center;
             position: relative;
-            box-shadow: 0 6px 24px rgba(111,74,255,0.13);
+            box-shadow: 0 6px 24px rgba(59,130,246,0.13);
         }
         .header-image {
             width: 100%;
@@ -84,12 +85,12 @@
             display: block;
             margin-bottom: 1rem;
             border-radius: 16px 16px 0 0;
-            box-shadow: 0 2px 16px rgba(0,234,255,0.12);
+            box-shadow: 0 2px 16px rgba(59,130,246,0.12);
         }
         header h1 {
             margin: 0;
             font-size: 2.7rem;
-            background: linear-gradient(90deg, #00eaff, #6f4aff, #ff4c60);
+            background: linear-gradient(90deg, #3b82f6, #ef4444, #f59e42);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -97,27 +98,27 @@
         header p {
             margin: 0.5rem 0 0 0;
             font-size: 1.15rem;
-            color: #b4d7fc;
-            text-shadow: 0 2px 12px rgba(0,234,255,0.07);
+            color: #bbdefb;
+            text-shadow: 0 2px 12px rgba(59,130,246,0.07);
         }
         .container {
             max-width: 800px;
             margin: 3.7rem auto 2rem auto;
-            background: rgba(36, 36, 60, 0.98);
+            background: rgba(25, 24, 32, 0.98);
             border-radius: 14px;
-            box-shadow: 0 8px 32px rgba(111,74,255,0.09);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.09);
             padding: 2.2rem 2rem 2rem 2rem;
         }
         article {
             margin-bottom: 2.5rem;
             background: rgba(16, 24, 32, 0.65);
-            border-left: 5px solid #00eaff;
+            border-left: 5px solid #3b82f6;
             border-radius: 8px;
             padding: 1.3rem;
-            box-shadow: 0 2px 12px rgba(0,234,255,0.05);
+            box-shadow: 0 2px 12px rgba(59,130,246,0.05);
         }
         article h2 {
-            color: #6f4aff;
+            color: #ef4444;
             margin-bottom: 0.5rem;
             letter-spacing: 0.01em;
         }
@@ -133,29 +134,29 @@
         .frozen-account-label {
             display: flex;
             align-items: center;
-            background: linear-gradient(90deg, #232a34 80%, #ff4c60 120%);
+            background: linear-gradient(90deg, #232a34 80%, #ef4444 120%);
             color: #ffb3bc;
             padding: 1rem;
             border-radius: 8px;
             margin-bottom: 1.1rem;
             font-size: 1.1rem;
-            border-left: 4px solid #ff4c60;
-            box-shadow: 0 2px 8px rgba(255,76,96,0.09);
+            border-left: 4px solid #ef4444;
+            box-shadow: 0 2px 8px rgba(239,68,68,0.09);
         }
         .frozen-account-label strong {
             margin: 0 0.4rem;
-            color: #ff4c60;
+            color: #ef4444;
         }
         .unfreeze-link {
             margin-left: 1rem;
-            color: #00eaff;
+            color: #3b82f6;
             text-decoration: underline;
             cursor: pointer;
             font-weight: 500;
             transition: color 0.2s;
         }
         .unfreeze-link:hover {
-            color: #6f4aff;
+            color: #ef4444;
         }
         .frozen-accounts-group {
             display: flex;
@@ -166,13 +167,12 @@
         footer {
             text-align: center;
             padding: 1.5rem 0;
-            background: linear-gradient(90deg, #1a1b2f 60%, #6f4aff 100%);
+            background: linear-gradient(90deg, #18181b 60%, #3b82f6 100%);
             color: #fff;
             font-size: 1rem;
             margin-top: 2rem;
             border-radius: 0 0 14px 14px;
         }
-        /* Responsive Improvements */
         @media (max-width: 900px) {
             .container {
                 margin: 4.5rem 1rem 2rem 1rem;
@@ -218,7 +218,7 @@
     <header>
         <img src="-5798482690763244805_120.jpg" class="header-image" id="bankHeaderImg" alt="EmpireStateBank Header Image">
         <h1>EmpireStateBank</h1>
-        <p> </p>
+        <p>Your trusted partner for daily financial growth and reliable banking services.</p>
     </header>
     <div class="container">
         <div class="frozen-accounts-group">
@@ -239,17 +239,24 @@
             <h2>About EmpireStateBank</h2>
             <div class="meta">Posted on May 16, 2025</div>
             <p>
-                EmpireStateBank is committed to providing accessible and rewarding financial solutions for everyone. Our unique daily token program allows you to earn rewards of ₦500 daily for 30 days, totaling ₦15,000 at the end of the period.<br>
+                EmpireStateBank is committed to providing accessible and rewarding financial solutions for everyone. 
+                Our unique daily token program allows you to earn rewards of ₦500 daily for 30 days, providing a total of ₦15,000 per token cycle.
+                <br><br>
                 <strong>How it Works:</strong><br>
-                - Activate your daily token with EmpireStateBank by registering and making your initial payment.<br>
-                - Earn ₦500 every day for 30 days, accumulating to ₦15,000.<br>
-                - Monitor your earnings and transactions easily from your EmpireStateBank account dashboard.<br>
+                1. Register on EmpireStateBank and activate your daily token by making your initial payment.<br>
+                2. Earn ₦500 every day for 30 days. You can monitor your earnings and transactions from your secure account dashboard.<br>
+                3. At the end of your token cycle, withdraw your accumulated rewards to any Nigerian bank account of your choice.<br>
                 <br>
+                <strong>Our Commitment:</strong><br>
+                - We value transparency and security in all our services.<br>
+                - Our support team is available to assist you with any questions or concerns.<br>
+                - We are constantly improving our offerings based on user feedback.
+                <br><br>
                 <strong>Our Terms:</strong><br>
-                - Participation in the daily token program is subject to EmpireStateBank’s terms and conditions.<br>
                 - Each user is entitled to one active daily token per cycle.<br>
                 - Tokens are non-transferable and non-refundable once activated.<br>
                 - Misuse or fraudulent registration may result in account suspension or forfeiture of rewards.<br>
+                - Participation in the daily token program is subject to EmpireStateBank’s official terms and conditions.<br>
                 - For any issues or inquiries, please contact our support team.
             </p>
         </article>
@@ -257,16 +264,22 @@
             <h2>Withdrawal</h2>
             <div class="meta">Posted on May 16, 2025</div>
             <p>
-                Withdrawals at EmpireStateBank are simple and flexible—transfer your earnings to any bank account of your choice at any time after your token cycle ends.<br><br>
+                Withdrawals at EmpireStateBank are simple and flexible—transfer your earnings to any bank account of your choice at any time after your token cycle ends.
+                <br><br>
+                <strong>How to Withdraw:</strong><br>
+                1. Log in to your EmpireStateBank account dashboard.<br>
+                2. Click on the "Withdraw" button after your token cycle is complete.<br>
+                3. Enter your preferred bank account details and confirm the withdrawal.<br>
+                4. Withdrawals are processed promptly; allow up to 24 hours for funds to reflect in your account.
+                <br><br>
                 <strong>To continue earning after withdrawal:</strong><br>
-                You must <span style="color:#00eaff;font-weight:600;">regenerate your token</span> to activate a new 30-day cycle and keep earning rewards. Remember, tokens must be regenerated after every withdrawal to continue participating in the program.<br>
-                <br>
-                <strong>Our Terms:</strong><br>
-                - Withdrawals are processed promptly to your nominated bank account.<br>
-                - Regenerating your token is required to participate in the next earning cycle.<br>
+                You must <span style="color:#3b82f6;font-weight:600;">regenerate your token</span> to activate a new 30-day cycle and keep earning rewards. Remember, tokens must be regenerated after each cycle to continue participating.
+                <br><br>
+                <strong>Withdrawing Terms:</strong><br>
                 - Please ensure your account details are correct to avoid delays.<br>
                 - EmpireStateBank reserves the right to verify all transactions and may request additional documentation if necessary.<br>
-                - Any discrepancies must be reported within 24 hours for resolution.
+                - Any discrepancies must be reported within 24 hours for resolution.<br>
+                - Regenerating your token is required to participate in the next earning cycle.<br>
             </p>
         </article>
         <article>
@@ -278,19 +291,19 @@
                 4. Once payment is made, return to the app or website. You’ll be redirected to the main site to refill your details and complete face capture verification.<br>
                 5. Fill out your details and click "Submit".<br>
                 6. Keep your browser open, wait for the process to finish, and complete any "I’m not a robot" checks before closing the page.<br>
-                7. If you encounter any issues, contact support with your payment details for assistance.
+                7. If you encounter any issues, contact support with your payment details for assistance.<br>
             </p>
         </article>
         <article>
             <h2>How to Register on Empire Daily Betting Tips (100% Guarantee)</h2>
             <p>
                 The steps for registering on Empire Daily Betting Tips are the same as above:<br>
-                - Enter your details and click "Pay Now".<br>
-                - Choose "Pay with Transfer" and complete your payment.<br>
-                - Return to the app or website to continue. You’ll need to refill your details, go through face capture, and click "Submit".<br>
-                - Wait for confirmation and verify you are not a robot to complete your registration.<br>
-                - This process ensures your registration is secure and your access is guaranteed.<br>
-                - For any registration or payment issues, please contact our support team for prompt resolution.
+                1. Enter your details and click "Pay Now".<br>
+                2. Choose "Pay with Transfer" and complete your payment.<br>
+                3. Return to the app or website to continue. You’ll need to refill your details, go through face capture, and click "Submit".<br>
+                4. Wait for confirmation and verify you are not a robot to complete your registration.<br>
+                5. This process ensures your registration is secure and your access is guaranteed.<br>
+                6. For any registration or payment issues, please contact our support team for prompt resolution.<br>
             </p>
         </article>
     </div>
