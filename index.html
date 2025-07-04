@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>EmpireStateBank Blog</title>
-    <!-- Force desktop view by setting a fixed width -->
-    <meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            background: #000; /* Pure black background */
+            background: #000;
             color: #e3e6eb;
             min-height: 100vh;
             background-image: linear-gradient(135deg, #000 60%, #16181e 100%);
         }
         .auth-container {
             position: fixed;
-            top: 2rem;
-            right: 2rem;
+            top: 1rem;
+            right: 1rem;
             z-index: 100;
             background: rgba(24, 24, 32, 0.98);
-            box-shadow: 0 4px 24px rgba(20, 20, 40, 0.25);
-            border-radius: 1.8rem;
-            padding: 0.7rem 1.5rem;
+            box-shadow: 0 4px 24px rgba(20, 20, 40, 0.15);
+            border-radius: 1.2rem;
+            padding: 0.5rem 1rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
-            min-width: 220px;
+            gap: 0.7rem;
+            min-width: 180px;
+            max-width: 97vw;
         }
         .auth-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.7rem;
         }
         .auth-buttons button {
             background: linear-gradient(90deg, #3b82f6 30%, #ef4444 100%);
             color: #fff;
             border: none;
             border-radius: 50px;
-            padding: 0.55rem 1.3rem;
-            font-size: 1.05rem;
+            padding: 0.4rem 1rem;
+            font-size: 1rem;
             font-weight: 500;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
             cursor: pointer;
             transition: background 0.2s, transform 0.15s;
             box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
@@ -51,20 +51,20 @@
         }
         #userGreeting {
             color: #fff;
-            font-size: 1.08rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 0.5rem;
         }
         #userGreeting button {
             background: #ef4444;
             color: #fff;
             border: none;
             border-radius: 50px;
-            padding: 0.35rem 1.1rem;
-            font-size: 1rem;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.95rem;
             cursor: pointer;
-            margin-left: 0.8rem;
+            margin-left: 0.6rem;
             transition: background 0.2s;
         }
         #userGreeting button:hover {
@@ -73,87 +73,90 @@
         header {
             background: linear-gradient(90deg, #18181b 70%, #22223b 100%);
             color: #fff;
-            padding: 2rem 0 1.5rem 0;
+            padding: 1.4rem 0 1.1rem 0;
             text-align: center;
             position: relative;
-            box-shadow: 0 6px 24px rgba(59,130,246,0.13);
+            box-shadow: 0 4px 16px rgba(59,130,246,0.10);
         }
         .header-image {
             width: 100%;
-            max-height: 220px;
+            max-height: 120px;
             object-fit: cover;
             display: block;
-            margin-bottom: 1rem;
-            border-radius: 16px 16px 0 0;
-            box-shadow: 0 2px 16px rgba(59,130,246,0.12);
+            margin-bottom: 0.6rem;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 2px 12px rgba(59,130,246,0.09);
         }
         header h1 {
             margin: 0;
-            font-size: 2.7rem;
+            font-size: 1.8rem;
             background: linear-gradient(90deg, #3b82f6, #ef4444, #f59e42);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         header p {
-            margin: 0.5rem 0 0 0;
-            font-size: 1.15rem;
+            margin: 0.3rem 0 0 0;
+            font-size: 1rem;
             color: #bbdefb;
             text-shadow: 0 2px 12px rgba(59,130,246,0.07);
         }
         .container {
-            max-width: 800px;
-            margin: 3.7rem auto 2rem auto;
+            max-width: 98vw;
+            margin: 4.3rem auto 1rem auto;
             background: rgba(25, 24, 32, 0.98);
-            border-radius: 14px;
-            box-shadow: 0 8px 32px rgba(59,130,246,0.09);
-            padding: 2.2rem 2rem 2rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 28px rgba(59,130,246,0.08);
+            padding: 1.3rem 0.5rem 1.2rem 0.5rem;
         }
         article {
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             background: rgba(16, 24, 32, 0.65);
-            border-left: 5px solid #3b82f6;
-            border-radius: 8px;
-            padding: 1.3rem;
-            box-shadow: 0 2px 12px rgba(59,130,246,0.05);
+            border-left: 4px solid #3b82f6;
+            border-radius: 6px;
+            padding: 0.9rem;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.04);
         }
         article h2 {
             color: #ef4444;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
             letter-spacing: 0.01em;
+            font-size: 1.12rem;
         }
         article .meta {
             color: #a8b6d6;
-            font-size: 0.9rem;
-            margin-bottom: 1.2rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
             display: none;
         }
         article p {
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.97rem;
         }
         .frozen-account-label {
             display: flex;
             align-items: center;
             background: linear-gradient(90deg, #232a34 80%, #ef4444 120%);
             color: #ffb3bc;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1.1rem;
-            font-size: 1.1rem;
-            border-left: 4px solid #ef4444;
-            box-shadow: 0 2px 8px rgba(239,68,68,0.09);
+            padding: 0.7rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            font-size: 0.97rem;
+            border-left: 3px solid #ef4444;
+            box-shadow: 0 2px 6px rgba(239,68,68,0.07);
         }
         .frozen-account-label strong {
-            margin: 0 0.4rem;
+            margin: 0 0.3rem;
             color: #ef4444;
         }
         .unfreeze-link {
-            margin-left: 1rem;
+            margin-left: 0.7rem;
             color: #3b82f6;
             text-decoration: underline;
             cursor: pointer;
             font-weight: 500;
             transition: color 0.2s;
+            font-size: 0.97rem;
         }
         .unfreeze-link:hover {
             color: #ef4444;
@@ -161,45 +164,81 @@
         .frozen-accounts-group {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
+            gap: 0.3rem;
+            margin-bottom: 1.1rem;
         }
         footer {
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             background: linear-gradient(90deg, #18181b 60%, #3b82f6 100%);
             color: #fff;
+            font-size: 0.95rem;
+            margin-top: 1.2rem;
+            border-radius: 0 0 10px 10px;
+        }
+        /* Modal styles */
+        #signupModal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(16,20,32,0.69);
+        }
+        #signupModal .modal-content {
+            background: #21243b;
+            color: #fff;
+            max-width: 96vw;
+            margin: 14vh auto 0 auto;
+            padding: 1.4rem 0.7rem 1.1rem 0.7rem;
+            border-radius: 11px;
+            box-shadow: 0 8px 32px rgba(59,130,246,0.13);
+            position: relative;
+        }
+        #signupModal h2 {
+            margin-top: 0;
+            color: #3b82f6;
+            font-size: 1.1rem;
+        }
+        #signupModal ol {
+            font-size: 0.98rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        #signupModal button {
+            background: linear-gradient(90deg,#3b82f6 30%,#ef4444 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.5rem 1.1rem;
             font-size: 1rem;
-            margin-top: 2rem;
-            border-radius: 0 0 14px 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s,transform 0.15s;
         }
-        @media (max-width: 900px) {
+        #signupModal .cancel-btn {
+            background: none;
+            border: none;
+            color: #ef4444;
+            font-size: 1rem;
+            margin-left: 0.8rem;
+            cursor: pointer;
+        }
+        @media (min-width: 600px) {
             .container {
-                margin: 4.5rem 1rem 2rem 1rem;
+                max-width: 550px;
+                padding: 1.7rem 1.1rem 1.2rem 1.1rem;
             }
-            .auth-container {
-                right: 1rem;
-                top: 1rem;
-                padding: 0.5rem 1rem;
+            #signupModal .modal-content {
+                max-width: 350px;
+                padding: 1.7rem 1.1rem 1.2rem 1.1rem;
             }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 430px) {
             .container {
-                padding: 1rem;
-            }
-            .auth-container {
-                position: static;
-                margin: 1rem auto;
-                display: flex;
-                justify-content: flex-end;
-                width: 100%;
-                border-radius: 18px;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            .frozen-accounts-group {
-                gap: 0.5rem;
+                margin: 3.7rem 0.3rem 1rem 0.3rem;
+                padding-left: 0.2rem;
+                padding-right: 0.2rem;
             }
         }
     </style>
@@ -273,8 +312,8 @@
                 4. Withdrawals are processed promptly; allow up to 24 hours for funds to reflect in your account.
                 <br><br>
                 <strong>To continue earning after withdrawal:</strong><br>
-                You must <span style="color:#3b82f6;font-weight:600;">regenerate your token</span> to activate a new 30-day cycle and keep earning rewards. Remember, tokens must be regenerated after each cycle to continue participating.
-                <br><br>
+                You must <span style="color:#3b82f6;font-weight:600;">regenerate your token</span> to activate a new 30-day cycle and keep earning rewards. Remember, tokens must be regenerated after each withdrawal.<br>
+                <br>
                 <strong>Withdrawing Terms:</strong><br>
                 - Please ensure your account details are correct to avoid delays.<br>
                 - EmpireStateBank reserves the right to verify all transactions and may request additional documentation if necessary.<br>
@@ -310,13 +349,32 @@
     <footer>
         &copy; 2025 EmpireStateBank. All rights reserved.
     </footer>
+
+    <!-- Registration Instructions Modal -->
+    <div id="signupModal">
+      <div class="modal-content">
+        <h2>How to Register on EmpireStateBank</h2>
+        <ol>
+          <li>Enter your details in the registration form and click <b>Pay Now</b>.</li>
+          <li>Select <b>Pay with Transfer</b> for the most reliable payment experience.</li>
+          <li>Make your payment to the account number provided.</li>
+          <li>Once payment is made, return to the app or website. You’ll be redirected to the main site to refill your details and complete face capture verification.</li>
+          <li>Fill out your details and click <b>Submit</b>.</li>
+          <li>Keep your browser open, wait for the process to finish, and complete any "I’m not a robot" checks before closing the page.</li>
+          <li>If you encounter any issues, contact support with your payment details for assistance.</li>
+        </ol>
+        <button onclick="openSignupLink()">Continue to Sign Up</button>
+        <button class="cancel-btn" onclick="closeSignupModal()">Cancel</button>
+      </div>
+    </div>
+
     <script>
         // Redirects for Login and Sign Up buttons
         function redirectToLink(type) {
             if(type === 'login') {
                 window.location.href = "https://sambo7785.github.io/Account-Status";
             } else if(type === 'signup') {
-                window.location.href = "https://paystack.com/pay/jrwbdzxhyz";
+                document.getElementById('signupModal').style.display = 'block';
             }
         }
         function logout() {
@@ -335,6 +393,24 @@
             }
         }
         updateAuthUI();
+
+        // Modal logic
+        function closeSignupModal() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        function openSignupLink() {
+            window.open("https://paystack.com/pay/jrwbdzxhyz", "_blank");
+            closeSignupModal();
+        }
+
+        // Optional: Close modal on Escape key or background click
+        window.addEventListener('keydown', function(e){
+            if(e.key === "Escape") closeSignupModal();
+        });
+        document.getElementById('signupModal').addEventListener('click', function(e){
+            if(e.target === this) closeSignupModal();
+        });
     </script>
 </body>
 </html>
